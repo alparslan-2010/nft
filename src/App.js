@@ -3,14 +3,14 @@ import "./styles/Home.css";
 import { useContract, useContractWrite, useAddress, useClaimedNFTSupply, useUnclaimedNFTSupply, useActiveClaimConditionForWallet } from "@thirdweb-dev/react";
 import preview from "./images/preview.gif"
 import { useState } from "react";
-const nftDropContractAddress = "0x4eCAc8909007eE37C97BDb5643440F14E4754e97";
+const nftDropContractAddress = "0x665B55d0E021Ce8a9459F7CF32B22c5177fc0B94";
 
 function Home() {
 
   const { contract: nftDrop } = useContract(nftDropContractAddress);
   const address = useAddress();
 
-  console.log("address", address);
+  // console.log("address", address);
 
   const [quantity, setQuantity] = useState(1);
 
@@ -19,11 +19,11 @@ function Home() {
 
   const activeClaimCondition = useActiveClaimConditionForWallet(nftDrop, address);
 
-  console.log("activeClaimCondition", activeClaimCondition?.data?.currencyMetadata.displayValue);
+  // console.log("activeClaimCondition", activeClaimCondition?.data?.currencyMetadata.displayValue);
 
-  console.log("unclaimedSupply", Number(unclaimedSupply.data));
+  // console.log("unclaimedSupply", Number(unclaimedSupply.data));
 
-  console.log("claimedSupply", Number(claimedSupply.data));
+  // console.log("claimedSupply", Number(claimedSupply.data));
 
   return (
     <div className="container">
